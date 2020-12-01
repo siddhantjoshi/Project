@@ -1,0 +1,25 @@
+//Inintialze variable to get timerState, delay in milisec
+	var timerState = 0;
+	var timedelay = 5000
+while(!timerState){
+	timerState = 1 ;
+	watchName();
+	setTimeout(watchName, timedelay);
+}
+function watchName(){
+
+//Target HTML element where the caption is being displayed
+	var arrayString = document.getElementsByClassName("CNusmb");
+
+//loop to check and get the variable from set of any array
+	for (var i = 0; i < arrayString.length; i++) {
+		var string = arrayString[i].innerText;
+		if(string.search(/siddhant/i) || string.search(/image/i)){
+		// Play music
+			var audio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
+			audio.play();
+		// Pause Music after few seconds	
+			setTimeout(function(){ audio.pause();}, 5000);
+    		}
+  	}
+}
